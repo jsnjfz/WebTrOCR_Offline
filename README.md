@@ -1,4 +1,4 @@
-# 采购员操作时序图
+# 询价单发布
 
 ```mermaid
 sequenceDiagram
