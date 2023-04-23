@@ -1,7 +1,5 @@
 
-将这段代码粘贴到支持mermaid的Markdown编辑器中，就可以生成一个时序图。如果您想要将这个时序图与您提供的示例代码结合，您可以按照以下方式修改：
 
-```markdown
 ```mermaid
 sequenceDiagram
     participant P as 采购员
