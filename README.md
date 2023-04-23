@@ -1,10 +1,19 @@
 ```mermaid
-graph LR
-    A[采购员开标] --> B[采购员查看报价]
-    B --> C[采购员线下商务谈判]
-    C --> D{是否需多轮报价?}
-    D -- 选择否 --> E[采购员评标]
-    D -- 选择是 --> F[采购员发起新一轮报价]
-    F --> G[供应商报价]
-    G --> H[供应商报价截止]
-    H --> A
+sequenceDiagram
+    participant P as 采购员
+    participant S as 供应商
+
+    P->>P: 开标
+    P->>P: 查看报价
+    P->>P: 线下商务谈判
+    P->>P: 是否需多轮报价?
+    alt 选择否
+        P->>P: 评标
+    else 选择是
+        loop 多轮报价
+            P->>S: 发起新一轮报价
+            S->>S: 报价
+            S->>P: 报价截止
+            P->>P: 开标
+        end
+    end
